@@ -20,6 +20,20 @@
 api given us by firebase,and it is called whenever user do these actions(signin,aignup and signout)
 -implemented signout
 -update profile
+-fetch from TMDB movies
+-BugFix-signup user displayname update
+-BugFix-if the user is not loggedin Redirect to /browse to login page and vice verca
+-unsubscribed to the onAuthStateChanged callback
+-added hardcoded values(url's) to constant file
+-register for tmdb api && create an app && get acces token
+-get data from tmdb now playing moviesl ist api
+-created a movieSlice in my redux store and updates state playing movielist movies by dispatching action
+-created custom hook for making api call and updating the store to make clean my component
+-customizing browse component
+-planning for Maincontainer& secondarycontainer
+-created custom hook to fetch data of trailer viedo and updated my store with that data
+-emebedded the youtube video and make it autoplay and css w-screen and aspect video
+-building secondary component
 
 #Feauters
 
@@ -36,6 +50,6 @@ api given us by firebase,and it is called whenever user do these actions(signin,
 -Movie Suggestions
 -Movie Lists \* N
 3.page 3
--Netflix-GPT
+-MoviePack-GPT
 -Search Bar
 -Movie Suggestions
