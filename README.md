@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-# MoviePack-GPT
+# StreamFlix(movie app) +GeminiAI feauture
 
 -create-react-app
 -configured TailwindCSS
