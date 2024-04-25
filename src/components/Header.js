@@ -4,10 +4,11 @@ import { LOGO_URL,USER_ICON } from '../utils/constants'
 import { auth } from '../utils/firebase';
 import {useNavigate} from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
-import { addUser,removeUser } from '../utils/userSlice';
-import { toggleGptSearch } from '../utils/gptSlice';
+import { addUser,removeUser } from '../store/userSlice';
+import { toggleGeminiSearch } from '../store/genAiSlice';
 import { SUPPORTED_LANGUAGES } from '../utils/constants';
-import { changeLanguage } from '../utils/configSlice';
+import { changeLanguage } from '../store/configSlice';
+import Logo from '../utils/logo.png'
 
 
 
@@ -20,7 +21,7 @@ const navigate=useNavigate()
 // subscribing to the store
 const user=useSelector(store=> store.user)
 
-const showGptSearch=useSelector( store=> store.gpt.showGptSearch)
+const showGeminiSearch=useSelector( store=> store.geminiai.showGeminiSearch)
 
 const dispatch=useDispatch()
 
@@ -61,9 +62,9 @@ const dispatch=useDispatch()
   });
     },[])
 
-    const handleGptSearchClick=()=>{
+    const handleGeminiSearchClick=()=>{
       // toggle GPT search
-      dispatch(toggleGptSearch())
+      dispatch(toggleGeminiSearch())
     }
 
     const handleChangeLanguage=(e)=>{
@@ -72,15 +73,15 @@ const dispatch=useDispatch()
 
 
   return (
-    <div className='flex justify-between'>
-      <div className='absolute z-10 pl-30 w-screen  bg-gradient-to-b from-black'>
-        <img    className='w-60 object-cover'  src={LOGO_URL}   alt='logo' />
+    <div className='bg-black md:flex md:justify-between'>
+      <div className='absolute z-10 px-5 md:-mt-1 -mt-6 w-screen  bg-black sm:bg-black  md:bg-gradient-to-b md:from-black'>
+        <img    className=' w-28 mx-auto md:mx-0  md:w-48  md:h-24  object-cover '  src={Logo}   alt='logo' />
       </div>
-      {/* if my user exist then only display signout */}
+      {/* if  user exist then only display signout */}
       {
-      user &&(<div className=' flex gap-5 absolute right-10 mt-6 z-10'>
+      user &&(<div className=' flex justify-between sm:justify-between ml-5 sm:ml-5 gap-16 sm:gap-48 md:gap-5 absolute md:right-10   mt-20  md:mt-6 z-10'>
         {
-           showGptSearch &&  (<select 
+           showGeminiSearch &&  (<select 
            className='font-bold px-2 bg-gray-500 text-white cursor-pointer' 
             onChange={handleChangeLanguage}>
           { SUPPORTED_LANGUAGES.map( lang => 
@@ -89,10 +90,10 @@ const dispatch=useDispatch()
         </select>)
         }
         <button  
-        onClick={handleGptSearchClick}     
+        onClick={handleGeminiSearchClick}     
         className='text-white bg-purple-800 px-2 rounded-sm'>
-          {showGptSearch ? "homepage":"GPT Search"}</button>
-        <img    className='w-8 object-cover rounded-sm'  src={USER_ICON}   alt='user' />
+          {showGeminiSearch ? "homepage":"Gemini AI Search"}</button>
+        <img    className=' hidden md:inline-block w-8 object-cover rounded-sm'  src={USER_ICON}   alt='user' />
         <button className='text-white font-bold'  onClick={handleSignOut} >Sign Out</button>
       </div>
       )

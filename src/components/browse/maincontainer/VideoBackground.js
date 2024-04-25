@@ -1,4 +1,4 @@
-import useMovieTrailer from "../hooks/useMovieTrailer"
+import useMovieTrailer from "../../../hooks/useMovieTrailer"
 import {useSelector} from 'react-redux'
 
 const VideoBackground = ({movieId}) => {
@@ -7,7 +7,7 @@ const VideoBackground = ({movieId}) => {
  useMovieTrailer(movieId)
 
   return (
-    <div className="p-0 m-0 ">
+    <div className="md:p-0 md:m-0 pt-20 ">
       {/* embeded youtube video using trailer key */}
       <iframe 
       className="w-screen aspect-video "

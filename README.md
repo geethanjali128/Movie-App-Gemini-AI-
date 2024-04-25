@@ -33,7 +33,15 @@ api given us by firebase,and it is called whenever user do these actions(signin,
 -planning for Maincontainer& secondarycontainer
 -created custom hook to fetch data of trailer viedo and updated my store with that data
 -emebedded the youtube video and make it autoplay and css w-screen and aspect video
--building secondary component
+-building secondary component with moviecard and movielist
+-geminiai api search page
+-gemini ai search bar
+-fetch gemini ai api movie suggestions from tmdb api
+-multiligual gemini ai serach bar
+-reused movieList component to make gemini ai movie suggestions
+-adding .env file
+-adding .env file to .gitignore
+-made app responsive
 
 #Feauters
 

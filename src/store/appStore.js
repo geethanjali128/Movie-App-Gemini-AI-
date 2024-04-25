@@ -1,7 +1,7 @@
 import {configureStore} from '@reduxjs/toolkit'
 import userReducer from './userSlice'
 import movieReducer from './movieSlice'
-import gptReducer from './gptSlice'
+import geminiaiReducer from './genAiSlice'
 import configReducer from './configSlice'
 
 const appStore=configureStore({
@@ -9,7 +9,7 @@ const appStore=configureStore({
         // takes the reducers of slices
         user:userReducer,
         movies:movieReducer,
-        gpt:gptReducer,
+        geminiai:geminiaiReducer,
         config:configReducer
         
     }

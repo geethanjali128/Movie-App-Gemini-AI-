@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react'
-import Header from './Header'
-import { BACK_URL } from '../utils/constants'
-import checkValidData from '../utils/validate'
+import Header from '../Header'
+import { BACK_URL } from '../../utils/constants'
+import checkValidData from '../../utils/validate'
 import {createUserWithEmailAndPassword,signInWithEmailAndPassword ,updateProfile } from "firebase/auth";
-import { auth } from '../utils/firebase';
+import { auth } from '../../utils/firebase';
 import {useDispatch} from 'react-redux'
-import { addUser } from '../utils/userSlice';
+import { addUser } from '../../store/userSlice';
 
 
 const Login = () => {
@@ -91,11 +91,11 @@ const Login = () => {
      <Header/>
      {/* background image */}
      <div className='absolute'>
-        <img  src={BACK_URL} alt='background' />
+        <img  className='w-screen h-screen object-cover'   src={BACK_URL} alt='background' />
      </div>
     {/* form */}
      <form  onSubmit={ e => e.preventDefault() }     
-         className='w-3/12  absolute mx-auto pt-7 pb-10 pl-2  left-10 right-0 bg-black bg-opacity-80 mt-24 text-white rounded-md' >
+         className='   w-full sm:w-full  md:w-3/12  absolute    -ml-10 md:mx-auto pt-20 pb-10   pl-10  md:pl-2  left-10 right-0 bg-black bg-opacity-80  mt-32  md:mt-24 text-white rounded-md' >
 
         <h2 className='text-2xl font-bold pl-10'>{isSignInForm?"Sign In":"Sign Up"}</h2>
 
@@ -115,7 +115,7 @@ const Login = () => {
          onClick={handleFormClick}           >
           {isSignInForm?"Sign In":"Sign Up"}</button>
 
-        <p className='ml-10 mt-5 cursor-pointer' onClick={toggleSignInForm}>{isSignInForm?"New To Netflix?Sign Up Now":'Already Registered?Sign In Now'}
+        <p className='ml-10 mt-5 cursor-pointer' onClick={toggleSignInForm}>{isSignInForm?"New To streamflix?Sign Up Now":'Already Registered?Sign In Now'}
             
            </p>
      </form>
