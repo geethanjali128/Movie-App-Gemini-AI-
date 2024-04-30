@@ -89,7 +89,7 @@ const handleGeminiSearchClick = async () => {
           className=' col-span-10 pl-2  md:pl-5 pr-5 md:pr-10  py-3 sm:py-3  md:py-5 text-sm md:text-lg font-bold border-none rounded-l-full rounded-t-full rounded-b-full rounded-r-md md:rounded-r-none focus:outline-none'
           onChange={handleSearchBar}/>
         <button 
-        className='  col-span-2  bg-red-600 -ml-9  md:-ml-20 md:py-1 rounded-full text-sm md:text-lg text-white font-bold'
+        className='  col-span-2  bg-red-600 -ml-9  md:-ml-20 md:py-3 rounded-full text-sm md:text-lg text-white font-bold'
         onClick={handleGeminiSearchClick}>
           {lang[langKey].search}</button>
       </form>
